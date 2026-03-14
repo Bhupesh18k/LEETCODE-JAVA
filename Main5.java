@@ -1,26 +1,16 @@
-// Valid Parentheses
-import java.util.*;
+// Length of Last Word
 class Solution {
-    public boolean isValid(String s) {
+    public int lengthOfLastWord(String s) {
+        int length = 0;
+        int i = s.length() - 1;
         
-        Stack<Character> stack = new Stack<>();
-        
-        for(char c : s.toCharArray()){
-            
-            if(c == '(' || c == '{' || c == '['){
-                stack.push(c);
-            }
-            else{
-                if(stack.isEmpty()) return false;
-                
-                char top = stack.pop();
-                
-                if(c == ')' && top != '(') return false;
-                if(c == '}' && top != '{') return false;
-                if(c == ']' && top != '[') return false;
-            }
+        while(i >= 0 && s.charAt(i) == ' '){
+            i--;
         }
-        
-        return stack.isEmpty();
+        while(i >= 0 && s.charAt(i) != ' '){
+            length++;
+            i--;
+        }  
+        return length;
     }
 }

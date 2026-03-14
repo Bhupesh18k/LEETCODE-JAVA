@@ -1,4 +1,5 @@
-// class Solution {
+// EDIT DISTANCE
+class Solution {
     public int minDistance(String word1, String word2) {
         
         int m = word1.length();
